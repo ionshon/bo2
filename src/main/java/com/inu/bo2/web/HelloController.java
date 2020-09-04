@@ -21,6 +21,7 @@ public class HelloController {
         return "hello";
     }
 
+    // jsp 와 같이 동작 안함.
     @GetMapping("/index")
     public String home() {
 
@@ -45,7 +46,8 @@ public class HelloController {
         return TestValue;
     }
 
-    // WEB-INF/jsp의 jsp 실행=> sufic: spring.mvc.view.prefix=/WEB-INF/jsp/, spring.mvc.view.suffix=.jsp
+    // WEB-INF/jsp의 jsp 실행을 위해 => sufic: spring.mvc.view.prefix=/WEB-INF/jsp/
+    //                                       spring.mvc.view.suffix=.jsp
     //  compile('org.apache.tomcat.embed:tomcat-embed-jasper')
     //	compile('javax.servlet:jstl:1.2') 필요
 @GetMapping("/jsp_test")

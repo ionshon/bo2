@@ -48,8 +48,8 @@ dependencies {
 */
 //	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
-	compile('javax.servlet:jstl:1.2')
+//	compile('org.apache.tomcat.embed:tomcat-embed-jasper') //jsp용
+//	compile('javax.servlet:jstl:1.2') //jsp용
 	compile('org.springframework.boot:spring-boot-starter-test')
 	testCompile group: 'junit', name: 'junit', version: '4.12'
 
