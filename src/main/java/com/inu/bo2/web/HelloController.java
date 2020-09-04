@@ -16,16 +16,22 @@ public class HelloController {
 
     @ResponseBody
     @GetMapping("/hello")
-    public String home2() {
+    public String home() {
 
         return "hello";
     }
 
     // jsp 와 같이 동작 안함.
     @GetMapping("/index")
-    public String home() {
+    public String home1() {
 
         return "index.html";
+    }
+
+    @GetMapping("/index2")
+    public String home2() {
+
+        return "index2.html";
     }
 
 
