@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller //(static 위치의 html 파일 호출 후, view)
-@ResponseBody
 //@RestController // 그냥 문자열 반환
 public class HelloController {
 
+
+    @ResponseBody
     @GetMapping("/hello")
     public String home2() {
 
-        return "index.html";
+        return "hello";
     }
 
     @GetMapping("/index")
@@ -29,7 +30,7 @@ public class HelloController {
 
 
 
- //   @ResponseBody
+    @ResponseBody
     @RequestMapping("/valueTest")
     public String valueTest(){
         String value = "test2 test";
@@ -44,7 +45,8 @@ public class HelloController {
         return TestValue;
     }
 
-    // sufic,compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+    // WEB-INF/jsp의 jsp 실행=> sufic: spring.mvc.view.prefix=/WEB-INF/jsp/, spring.mvc.view.suffix=.jsp
+    //  compile('org.apache.tomcat.embed:tomcat-embed-jasper')
     //	compile('javax.servlet:jstl:1.2') 필요
 @GetMapping("/jsp_test")
 public ModelAndView test()  {
