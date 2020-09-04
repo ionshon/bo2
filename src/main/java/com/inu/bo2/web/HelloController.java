@@ -1,27 +1,34 @@
 package com.inu.bo2.web;
 
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Controller //(static 위치의 html 파일 호출 후, view)
+@ResponseBody
+//@RestController // 그냥 문자열 반환
 public class HelloController {
 
     @GetMapping("/hello")
-    public String hello() {
+    public String home2() {
 
-        return "hello";
+        return "index.html";
     }
 
-}
+    @GetMapping("/index")
+    public String home() {
 
-/*
+        return "index.html";
+    }
+
+
+
+
  //   @ResponseBody
     @RequestMapping("/valueTest")
     public String valueTest(){
@@ -37,8 +44,10 @@ public class HelloController {
         return TestValue;
     }
 
-@RequestMapping("/jsp_test")
-public ModelAndView test() throws Exception{
+    // sufic,compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+    //	compile('javax.servlet:jstl:1.2') 필요
+@GetMapping("/jsp_test")
+public ModelAndView test()  {
     ModelAndView mav = new ModelAndView("test");
     mav.addObject("name", "goddaehee");
 
@@ -59,4 +68,3 @@ public ModelAndView test() throws Exception{
     }
 
 }
-*/
