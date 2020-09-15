@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1 th:text="#{content.id} + '(1)'">Hello Object</h1>  <!-- message.property 내 -->
+<p th:text="${msg}">message.</p>  <!-- Model String-->
+<div th:object="${object}">        <!-- Model Object -->
+    <p th:text="*{id}"></p>
+    <p th:text="*{name}"></p>
+</div>
+
+
+<h1 th:text="#{content.id} + '(2)' ">Hello World</h1>
+<div th:object="${object}">
+    <p th:text="|id : *{id}, name : *{name}|">message.</p>
+</div>
+
+<h1 th:text="#{content.id} + '(3)'">Hello World</h1>
+<p th:utext="${msg2}">message.</p> <!-- html 형 전달 -->
+<!-- 타임리프는 html 태그를 모두 escape 처리하기 때문에 'th:utext'로 써야한다.
+보안에 취약하니 주의해서 쓸 것  -->
+
+</body>
+</html>

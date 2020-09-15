@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hello 조건문</h1>
+
+<!-- "변수식 ? 값1 : 값2" -->
+<p th:text="${num} + ' : ' + (${check} ? ${trueVal} : ${falseVal})"></p>
+
+<!-- if -->
+<p th:if="${check}" th:text="${num} + ' : ' + ${trueVal}">true</p>
+<p th:unless="${check}" th:text="${num} + ' : ' + ${falseVal}">false</p>
+
+<!-- switch -->
+<div th:switch="${num}">
+    <p th:case="1" th:text="one">1</p>
+    <p th:case="2" th:text="two">2</p>
+    <p th:case="3" th:text="three">3</p>
+    <p th:case="*">?</p>
+</div>
+
+<!-- each -->
+<table border="1">
+    <tr>
+        <td>NAME</td>
+        <td>E-MAIL</td>
+    </tr>
+    <tr th:each="obj:${list}">
+        <td th:text="${obj[0]}"></td>
+        <td th:text="${obj[1]}"></td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

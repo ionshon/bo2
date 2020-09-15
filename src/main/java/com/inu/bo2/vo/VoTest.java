@@ -7,12 +7,11 @@ public class VoTest {
     private String id;
     private String name;
 
-    /*
-    public VoTest(String id, String name) {
-        this.id = id;
-        this.name = name;
+    public VoTest(String inushon, String 이누숄) {
     }
-*/
+
+
+
     public Long getMbrNo() {
         return mbrNo;
     }

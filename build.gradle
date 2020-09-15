@@ -36,7 +36,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
 
 //	implementation 'org.springframework.boot:spring-boot-starter'
 //	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -46,10 +45,14 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 */
-//	compile('org.projectlombok:lombok')
+	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 //	compile('org.apache.tomcat.embed:tomcat-embed-jasper') //jsp용
 //	compile('javax.servlet:jstl:1.2') //jsp용
+	annotationProcessor("org.projectlombok:lombok")
+	compileOnly("org.projectlombok:lombok")
 	compile('org.springframework.boot:spring-boot-starter-test')
 	testCompile group: 'junit', name: 'junit', version: '4.12'
 
