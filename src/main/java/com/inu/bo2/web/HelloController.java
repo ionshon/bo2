@@ -128,35 +128,35 @@ public ModelAndView test()  {
 
 // 전처리
 
-        @RequestMapping("/fronti/{num}")
-        public ModelAndView index2 ( @PathVariable int num, ModelAndView mav){
-            mav.setViewName("fronti");
+    @RequestMapping("/fronti/{num}")
+    public ModelAndView index2 ( @PathVariable int num, ModelAndView mav){
+        mav.setViewName("fronti");
 
-            mav.addObject("num", num);
-            if (num >= 0) {
-                mav.addObject("check", "num >= list.size() ? 0 : num");
-            } else {
-                mav.addObject("check", "num*-1 >= list.size() ? 0 : num*-1");
-            }
-
-            ArrayList<Person> list = new ArrayList<Person>();
-            list.add(new Person("kim", "kim@a.com"));
-            list.add(new Person("lee", "lee@b.com"));
-            list.add(new Person("park", "park@c.com"));
-
-            mav.addObject("list", list);
-
-            return mav;
+        mav.addObject("num", num);
+        if (num >= 0) {
+            mav.addObject("check", "num >= list.size() ? 0 : num");
+        } else {
+            mav.addObject("check", "num*-1 >= list.size() ? 0 : num*-1");
         }
 
-        static class Person {
-            public String name;
-            public String email;
+        ArrayList<Person> list = new ArrayList<Person>();
+        list.add(new Person("kim", "kim@a.com"));
+        list.add(new Person("lee", "lee@b.com"));
+        list.add(new Person("park", "park@c.com"));
 
-            public Person(String name, String email) {
-                this.name = name;
-                this.email = email;
-            }
+        mav.addObject("list", list);
+
+        return mav;
+    }
+
+    static class Person {
+        public String name;
+        public String email;
+
+        public Person(String name, String email) {
+            this.name = name;
+            this.email = email;
         }
+    }
 
 }
